@@ -5,7 +5,6 @@
 #include<time.h>
 #define sleep 20
 
-// style
 void setcursor(bool visible) {
     HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
     CONSOLE_CURSOR_INFO lpCursor;
@@ -18,7 +17,6 @@ void setcolor(int fg, int bg) {
     SetConsoleTextAttribute(hConsole, bg * 16 + fg);
 }
 
-// control
 char cursor(int x, int y) {
     HANDLE hStd = GetStdHandle(STD_OUTPUT_HANDLE);
     char buf[2]; COORD c = { x,y }; DWORD num_read;
@@ -108,7 +106,6 @@ int main()
                 {
                     if (cursor(bx[i], by[i] - 1) == '*')
                     {
-                        //                      Sleep(sleep);
                         Beep(700, 100);
                         score++;
                         scount--;
